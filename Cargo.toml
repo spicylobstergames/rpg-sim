@@ -1,0 +1,16 @@
+[package]
+name = "rpg-sim"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy = "0.6.1"
+bevy_ecs_ldtk = "0.2.0"
+rand = "0.8.5"
+
+[profile.dev]
+opt-level = 1
+[profile.dev.package."*"]
+opt-level = 3
