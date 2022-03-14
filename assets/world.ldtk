@@ -9,7 +9,7 @@
 		"url": "https://ldtk.io"
 	},
 	"jsonVersion": "0.9.3",
-	"nextUid": 151,
+	"nextUid": 157,
 	"worldLayout": "Free",
 	"worldGridWidth": 256,
 	"worldGridHeight": 256,
@@ -27,7 +27,7 @@
 	"pngFilePattern": null,
 	"backupOnSave": false,
 	"backupLimit": 10,
-	"levelNamePattern": "Level_%idx",
+	"levelNamePattern": "%world_Level_%idx",
 	"flags": [],
 	"defs": { "layers": [
 		{
@@ -41,7 +41,7 @@
 			"pxOffsetY": 0,
 			"requiredTags": [],
 			"excludedTags": [],
-			"intGridValues": [{ "value": 1, "identifier": null, "color": "#000000" }],
+			"intGridValues": [],
 			"autoTilesetDefUid": null,
 			"autoRuleGroups": [],
 			"autoSourceLayerDefUid": null,
@@ -60,10 +60,10 @@
 			"pxOffsetY": 0,
 			"requiredTags": [],
 			"excludedTags": [],
-			"intGridValues": [{ "value": 1, "identifier": null, "color": "#000000" }],
+			"intGridValues": [],
 			"autoTilesetDefUid": 1,
 			"autoRuleGroups": [
-				{ "uid": 50, "name": "Grass", "active": true, "collapsed": true, "isOptional": false, "rules": [
+				{ "uid": 50, "name": "Grass", "active": true, "collapsed": false, "isOptional": false, "rules": [
 					{
 						"uid": 51,
 						"active": true,
@@ -2137,7 +2137,7 @@
 				] }
 			],
 			"autoSourceLayerDefUid": 7,
-			"tilesetDefUid": null,
+			"tilesetDefUid": 1,
 			"tilePivotX": 0,
 			"tilePivotY": 0
 		},
@@ -2156,7 +2156,7 @@
 			"autoTilesetDefUid": 1,
 			"autoRuleGroups": [],
 			"autoSourceLayerDefUid": null,
-			"tilesetDefUid": null,
+			"tilesetDefUid": 1,
 			"tilePivotX": 0,
 			"tilePivotY": 0
 		},
@@ -2171,8 +2171,8 @@
 			"pxOffsetY": 0,
 			"requiredTags": [],
 			"excludedTags": [],
-			"intGridValues": [{ "value": 1, "identifier": null, "color": "#000000" }],
-			"autoTilesetDefUid": null,
+			"intGridValues": [],
+			"autoTilesetDefUid": 1,
 			"autoRuleGroups": [],
 			"autoSourceLayerDefUid": null,
 			"tilesetDefUid": 1,
@@ -2187,14 +2187,14 @@
 			"width": 16,
 			"height": 16,
 			"resizableX": false,
-			"resizableY": false,
+			"resizableY": true,
 			"keepAspectRatio": false,
 			"fillOpacity": 1,
-			"lineOpacity": 1,
+			"lineOpacity": 0,
 			"hollow": false,
 			"color": "#94D9B3",
 			"renderMode": "Tile",
-			"showName": true,
+			"showName": false,
 			"tilesetId": 146,
 			"tileId": 2,
 			"tileRenderMode": "Cover",
@@ -2225,6 +2225,31 @@
 					"textLanguageMode": null
 				}
 			]
+		},
+		{
+			"identifier": "Castle",
+			"uid": 156,
+			"tags": [],
+			"width": 96,
+			"height": 128,
+			"resizableX": false,
+			"resizableY": false,
+			"keepAspectRatio": false,
+			"fillOpacity": 0.38,
+			"lineOpacity": 1,
+			"hollow": false,
+			"color": "#00495F",
+			"renderMode": "Rectangle",
+			"showName": true,
+			"tilesetId": null,
+			"tileId": null,
+			"tileRenderMode": "Stretch",
+			"maxCount": 0,
+			"limitScope": "PerLevel",
+			"limitBehavior": "MoveLastOne",
+			"pivotX": 0,
+			"pivotY": 0,
+			"fieldDefs": []
 		}
 	], "tilesets": [
 		{
@@ -2263,11 +2288,31 @@
 			"customData": [],
 			"savedSelections": [],
 			"cachedPixelData": { "opaqueTiles": "0000", "averageColors": "7678387787789778" }
+		},
+		{
+			"__cWid": 15,
+			"__cHei": 8,
+			"identifier": "BlueBuilding",
+			"uid": 154,
+			"relPath": "Level/Building/BlueBuilding.png",
+			"pxWid": 240,
+			"pxHei": 128,
+			"tileGridSize": 16,
+			"spacing": 0,
+			"padding": 0,
+			"tagsSourceEnumUid": null,
+			"enumTags": [],
+			"customData": [],
+			"savedSelections": [],
+			"cachedPixelData": {
+				"opaqueTiles": "000000000000000000000000000000010010000000000011110000000000011110000000010011110000110110011110000110110000000000000000",
+				"averageColors": "0000456700000000456700000000646800000000000000000000000000001589e59a25992599e59a15890000000000000000000000000000276600004677f987e987e987f9874677187618760000000000000000458995890000b59af899faa8fba8f899b59a357835780000000000000000a699e69a1655c798f998fba8fba8f998c799c59ac59ab987fa97f9878997f997fba8a987b886fa97fa98fa98fa97b886fa98fa98da98faa8fa98ca97fa98faa8ca98daa9f9a9f888f888f9a9daa9d888d888b987f898f9989887f998f998b987448a3479155515553479448a456745674489557755793478557956774489"
+			}
 		}
 	], "enums": [], "externalEnums": [], "levelFields": [] },
 	"levels": [
 		{
-			"identifier": "Level_0",
+			"identifier": "_World_Level_0",
 			"uid": 0,
 			"worldX": 0,
 			"worldY": 0,
@@ -2347,6 +2392,17 @@
 									"params": ["Raye"]
 								}]
 							}]
+						},
+						{
+							"__identifier": "Castle",
+							"__grid": [2,4],
+							"__pivot": [0,0],
+							"__tile": null,
+							"width": 96,
+							"height": 128,
+							"defUid": 156,
+							"px": [32,64],
+							"fieldInstances": []
 						}
 					]
 				},

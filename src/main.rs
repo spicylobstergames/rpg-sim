@@ -9,6 +9,7 @@ fn main() {
         .add_startup_system(setup)
         .insert_resource(LevelSelection::Index(0))
         .register_ldtk_entity::<NpcBundle>("NPC")
+        .register_ldtk_entity::<CastleBundle>("Castle")
         .add_system(RandomWalk::update)
         .run();
 }
@@ -31,6 +32,14 @@ pub struct NpcBundle {
     #[bundle]
     sprite_bundle: SpriteSheetBundle,
 }
+
+#[derive(Bundle, LdtkEntity)]
+pub struct CastleBundle {
+    #[sprite_sheet_bundle("Level/Building/BlueBuilding.png", 96.0, 128.0, 1, 1, 0., 0)]
+    #[bundle]
+    sprite_bundle: SpriteSheetBundle,
+}
+
 
 #[derive(Component)]
 pub struct RandomWalk {
